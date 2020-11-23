@@ -3,17 +3,12 @@ from redis import Redis, RedisError
 import os
 import socket
 
-#connect to redis server
 redis = Redis(host = "redis-server",db=0,socket_timeout=2,socket_connect_timeout=10)
-#create a new application instance
 app = Flask(__name__)
-
-#i define my route
 @app.route("/")
 def index():
-	return "<h1> hello world </h1>"
-
-
+	return "<h1> hello world </h1>
+	
 @app.route("/visit")
 def visit_counting():
 	try:
